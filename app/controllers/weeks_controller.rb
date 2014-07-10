@@ -1,8 +1,8 @@
 class WeeksController < ApplicationController
   def show
     week = (params[:id] or Week.current_week).to_i
-    @bs_1rm = params[:@bs_1rm].to_f 
-    @fs_1rm = params[:@fs_1rm].to_f 
+    @bs_1rm = params[:bs_1rm].to_f 
+    @fs_1rm = params[:fs_1rm].to_f 
     
     @bs_1rm > 0.0 or (@bs_1rm = 100.0)
     @fs_1rm > 0.0 or (@fs_1rm = 100.0)
@@ -18,6 +18,9 @@ class WeeksController < ApplicationController
     @week = week
     @days.each do |day|
       @workout[day.to_s] = bs.where(:day => day).zip(fs.where(:day => day))  
+
+#debugger 
+#    x=1
     end
   end
 end

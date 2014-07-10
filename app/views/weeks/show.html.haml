@@ -15,11 +15,11 @@
         %tr
           %td= set.first.reps
           %td= 100 * set.first.percentage 
-          %td= set.first.percentage * @bs_1rm
+          %td= (set.first.percentage * @bs_1rm).round(2)
           -unless set.last.nil? 
             %td= set.last.reps
             %td= 100 * set.last.percentage 
-            %td= set.last.percentage * @fs_1rm
+            %td= (set.last.percentage * @fs_1rm).round(2)
           -else
             %td/
             %td/
