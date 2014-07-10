@@ -1,15 +1,18 @@
 %h1= "Week #{@week}"
 -@days.each do |day| 
   %h2= "Day #{day}"
-  %table{:id => "day_#{day}"}
+  %table.workout{:id => "day_#{day}"}
     %thead
       %tr
-        %th Back Squat (reps)
-        %th %1RM
-        %th Weight 
-        %th Front Squat (reps)
-        %th %1RM
-        %th Weight 
+        %th.lift{:colspan => 3} Back Squat 
+        %th.lift{:colspan => 3} Front Squat 
+      %tr
+        %th.scheme reps
+        %th.scheme %1RM
+        %th.scheme Weight 
+        %th.scheme reps
+        %th.scheme %1RM
+        %th.scheme Weight 
     %tbody
       -@workout[day.to_s].each do |set| 
         %tr
