@@ -1,0 +1,27 @@
+%h1= "Week #{@week}"
+-@days.each do |day| 
+  %h2= "Day #{day}"
+  %table{:id => "day_#{day}"}
+    %thead
+      %tr
+        %th Back Squat (reps)
+        %th %1RM
+        %th Weight 
+        %th Front Squat (reps)
+        %th %1RM
+        %th Weight 
+    %tbody
+      -@workout[day.to_s].each do |set| 
+        %tr
+          %td= set.first.reps
+          %td= 100 * set.first.percentage 
+          %td= set.first.percentage * @bs_1rm
+          -unless set.last.nil? 
+            %td= set.last.reps
+            %td= 100 * set.last.percentage 
+            %td= set.last.percentage * @fs_1rm
+          -else
+            %td/
+            %td/
+            %td/
+

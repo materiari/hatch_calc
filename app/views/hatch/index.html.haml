@@ -1,2 +1,13 @@
-%h1 Hatch#index
-%p Find me in app/views/hatch/index.html.haml
+%h1 CFMG Hatch Program Calculator
+= form_tag redir_to_show_path do
+  Week: 
+  = select_tag :week, options_for_select(('1'..'12').to_a.zip(1..12).to_a, @current_week)
+  %br
+  Back Squat 1rm: 
+  = text_field_tag 'backsquat_1rm', 100.0, :size => 4
+  %br
+  Front Squat 1rm: 
+  = text_field_tag 'frontsquat_1rm', 100.0, :size => 4
+  %br
+  = submit_tag 'Calculate'
+

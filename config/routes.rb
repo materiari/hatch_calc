@@ -16,6 +16,7 @@ Hatch::Application.routes.draw do
   #   resources :products
 
   resources :weeks
+  post 'hatch/redirect_to_show' => 'hatch#redirect_to_show', :as => :redir_to_show
   # Sample resource route with options:
   #   resources :products do
   #     member do
