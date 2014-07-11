@@ -1,4 +1,6 @@
 class WorkoutGenerator
+  attr_reader :work_days, :work_week
+
   def initialize(week, bs_1rm, fs_1rm)
     bs_1rm > 0.0 or (bs_1rm = 100.0)
     fs_1rm > 0.0 or (fs_1rm = 100.0)

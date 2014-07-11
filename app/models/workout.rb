@@ -1,12 +1,10 @@
 class Workout < ActiveRecord::Base
   attr_accessible :day, :lift, :percentage, :reps, :week, :set_number
 
-  attr_reader :work_days, :work_week
-
   scope :first_day, where(:day => 1)
   scope :second_day, where(:day => 2)
   scope :by_week, lambda {|week| where(:week => week) unless week.nil?}
-  scope :sorted, order(:day => :asc, :set_number => :asc)
+  scope :sorted, order(:day, :set_number)
   scope :back_squat, where(:lift => :back_squat)
   scope :front_squat, where(:lift => :front_squat)
   scope :days, select(:day).uniq
