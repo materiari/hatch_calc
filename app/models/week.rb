@@ -1,8 +1,3 @@
-class Week
-
-  def self.current_week
-    2
-  end
-
+class Week < ActiveRecord::Base
+  attr_accessible :ending, :index, :index, :starting, :week_number
 end
-

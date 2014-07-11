@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140708032858) do
+ActiveRecord::Schema.define(:version => 20140711163806) do
+
+  create_table "weeks", :force => true do |t|
+    t.integer  "week_number"
+    t.date     "starting"
+    t.date     "ending"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "weeks", ["starting", "ending"], :name => "index_weeks_on_starting_and_ending"
 
   create_table "workouts", :force => true do |t|
     t.integer  "week"
