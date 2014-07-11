@@ -1,6 +1,6 @@
 class HatchController < ApplicationController
   def index
-    @current_week = session[:week] || Week.current_week
+    @current_week = Week.current_week
     @keep = session[:keep] ||= cookies[:keep]
 
     @bs ||= session[:bs_1rm] ||= cookies[:bs_1rm] 
@@ -15,7 +15,6 @@ class HatchController < ApplicationController
   end
 
   def redirect_to_show
-    debugger
     keep = session[:keep] = params[:keep]
     bs_1rm = params[:backsquat_1rm]
     fs_1rm = params[:frontsquat_1rm]

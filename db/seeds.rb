@@ -8,6 +8,7 @@
 require 'csv'
 
 (WEEK, DAY, B_REPS, B_PCT, F_REPS, F_PCT,SET)=(0..10).to_a
+(WEEK_NUMBER, STARTING, ENDING) = (0..10).to_a
 
 csv_file_path = 'db/hatch_seed_data.csv'
 
@@ -32,3 +33,13 @@ puts "Back squat row added #{row[WEEK]}:#{row[DAY]}:#{row[SET]}."
 puts "Front squat row added #{row[WEEK]}:#{row[DAY]}:#{row[SET]}."
 end
 
+date_file = 'db/hatch_weeks.csv'
+
+CSV.foreach(date_file) do |week|
+  Week.create!({
+      :week_number => week[WEEK_NUMBER],
+      :starting => week[STARTING],
+      :ending => week[ENDING]
+      }) unless(week[WEEK_NUMBER].empty?)
+    puts "Adding work week: #{week[WEEK_NUMBER]}"
+end
