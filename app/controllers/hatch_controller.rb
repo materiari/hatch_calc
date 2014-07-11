@@ -19,7 +19,7 @@ class HatchController < ApplicationController
     keep = session[:keep] = params[:keep]
     bs_1rm = params[:backsquat_1rm]
     fs_1rm = params[:frontsquat_1rm]
-    session[:week]=params[:week]
+#session[:week]=params[:week]
     session[:bs_1rm]=bs_1rm
     session[:fs_1rm]=fs_1rm
     if keep
