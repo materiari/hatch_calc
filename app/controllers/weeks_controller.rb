@@ -1,4 +1,5 @@
 class WeeksController < ApplicationController
+  before_filter :check_for_mobile
   def show
     week = (params[:id]).to_i
     bs_1rm = params[:bs_1rm].to_f 

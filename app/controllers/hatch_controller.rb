@@ -1,4 +1,5 @@
 class HatchController < ApplicationController
+  before_filter :check_for_mobile, :only => [:index]
   def index
     @current_week = Week.current_week
     @keep = session[:keep] ||= cookies[:keep]
