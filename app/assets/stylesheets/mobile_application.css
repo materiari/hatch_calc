@@ -14,7 +14,10 @@ a {
   background: transparent;
   color: maroon;
   text-decoration: underline;
-  font-weight: bold;
+  font-size: 12pt
+}
+p.small {
+  font-size: 12pt
 }
 h1 {
   color: maroon;
@@ -83,3 +86,4 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+input { font-size: 14px; }
