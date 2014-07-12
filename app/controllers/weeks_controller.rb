@@ -9,5 +9,9 @@ class WeeksController < ApplicationController
     @workout.build
     @days = @workout.work_days
     @week = @workout.work_week
+    @lifts = {
+      :back => 'Back Squat',
+      :front => 'Front Squat'
+    }
   end
 end

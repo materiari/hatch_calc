@@ -1,0 +1,27 @@
+/
+  Mobile version lays out vertically to not eat screen real estate
+  As a general rule: only scroll in one direction.
+%h1= "Week #{@week}"
+-@days.each do |day| 
+  %h2= "Day #{day}"
+  -@lifts.keys.sort.each do |lift|
+    %table.workout{:id => "day_#{day}"}
+      %thead
+        %tr
+          %th.lift{:colspan => 3}=@lifts[lift] 
+        %tr
+          %th.scheme Reps
+          %th.scheme %1RM
+          %th.scheme Weight 
+      %tbody
+        -@workout.flat[day][lift].each do |set| 
+          %tr
+            -if set.nil? 
+              %td/
+              %td/
+              %td/
+            -else
+              %td.entry= set.reps
+              %td.entry= set.percentage 
+              %td.entry= set.weight.round(2)
+          

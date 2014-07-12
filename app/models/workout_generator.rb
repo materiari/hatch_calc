@@ -34,6 +34,10 @@ class WorkoutGenerator
     workout
   end
 
+  def flat
+    @workout
+  end
+
   def back_squat_set(set)
     WorkingSet.new(set, @bs_1rm);
   end
