@@ -30,4 +30,13 @@ class HatchController < ApplicationController
       :bs_1rm => bs_1rm , :fs_1rm => fs_1rm)
   end
 
+  def set_layout
+    override = params[:mobile]
+    if(override.nil? or override.empty? or override == 'auto')
+      session.delete(:mobile_override)
+    else
+      session[:mobile_override] = params[:mobile]
+    end
+    redirect_to root_path
+  end
 end

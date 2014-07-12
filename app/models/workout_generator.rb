@@ -16,12 +16,20 @@ class WorkoutGenerator
   end
 
   def build(days=%w{1 2})
-    workout = {}
+    @workout = {}
     @work_days = days
     days.each do |day|
       bs_day = @bs.where(:day => day.to_i).map {|set| self.back_squat_set(set)}
       fs_day = @fs.where(:day => day.to_i).map {|set| self.front_squat_set(set)}
-      workout[day] = bs_day.zip fs_day  
+      @workout[day] = {:front => fs_day, :back => bs_day}
+    end
+    self
+  end
+
+  def combined
+    workout = {}
+    @work_days.each do |day|
+       workout[day] = @workout[day][:back].zip @workout[day][:front]
     end
     workout
   end

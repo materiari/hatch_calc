@@ -14,17 +14,17 @@
         %th.scheme %1RM
         %th.scheme Weight 
     %tbody
-      -@workout[day].each do |set| 
+      -@workout.combined()[day].each do |set| 
         %tr
-          %td= set.first.reps
-          %td= set.first.percentage 
-          %td= set.first.weight.round(2)
+          %td.entry= set.first.reps
+          %td.entry= set.first.percentage 
+          %td.entry= set.first.weight.round(2)
           -if set.last.nil? 
             %td/
             %td/
             %td/
           -else
-            %td= set.last.reps
-            %td= set.last.percentage 
-            %td= set.last.weight.round(2)
+            %td.entry= set.last.reps
+            %td.entry= set.last.percentage 
+            %td.entry= set.last.weight.round(2)
           

@@ -14,4 +14,8 @@
   = 'Save for next time'
 %br
 =link_to 'About', about_path
-
+%br
+Switch layout to: 
+=link_to 'Mobile', :action => "set_layout", :mobile => "1" 
+=link_to 'Full', :action => "set_layout", :mobile => "0" 
+=link_to 'Auto', :action => "set_layout", :mobile => 'auto'

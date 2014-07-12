@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  layout :detect_layout
+
+  protected
   def check_for_mobile
     session[:mobile_override] = params[:mobile] if params[:mobile]
     prepare_for_mobile if mobile_device?
@@ -7,6 +10,10 @@ class ApplicationController < ActionController::Base
 
   def prepare_for_mobile
     prepend_view_path Rails.root + 'app' + 'views_mobile'
+  end
+
+  def detect_layout
+    mobile_device? ? 'mobile_application' : 'application'
   end
 
   def mobile_device?
