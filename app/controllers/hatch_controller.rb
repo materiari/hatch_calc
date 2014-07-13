@@ -9,6 +9,8 @@ class HatchController < ApplicationController
 
     @bs  ||= 100.0
     @fs  ||= 100.0
+
+    @default_days = (mobile_device? ? 'Day 1' : 'Both')
   end
 
   def about
@@ -19,6 +21,15 @@ class HatchController < ApplicationController
     keep = session[:keep] = params[:keep]
     bs_1rm = params[:backsquat_1rm]
     fs_1rm = params[:frontsquat_1rm]
+    days = case params[:days]
+    when 'Day 1'
+      1
+    when 'Day 2'
+      2
+#when 'Both'
+    else
+      0
+    end
 #session[:week]=params[:week]
     session[:bs_1rm]=bs_1rm
     session[:fs_1rm]=fs_1rm
@@ -27,7 +38,7 @@ class HatchController < ApplicationController
       cookies[:fs_1rm]=fs_1rm
     end
     redirect_to week_path(:id => params[:week], 
-      :bs_1rm => bs_1rm , :fs_1rm => fs_1rm)
+      :bs_1rm => bs_1rm , :fs_1rm => fs_1rm, :days => days)
   end
 
   def set_layout

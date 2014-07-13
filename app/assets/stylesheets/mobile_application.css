@@ -16,6 +16,10 @@ a {
   text-decoration: underline;
   font-size: 12pt
 }
+label {
+  color: LightGray;
+  font-size: 14pt
+}
 p.small {
   font-size: 12pt
 }

@@ -9,15 +9,20 @@
   Front Squat 1rm: 
   = text_field_tag 'frontsquat_1rm', @fs, :size => 4
   %br
+  - [ 'Day 1', 'Day 2', 'Both'].each do |days|
+    %label
+      = radio_button_tag :days, days, days == @default_days
+      = days.humanize
   = submit_tag 'Calculate'
   = check_box_tag 'keep', 1, @keep
   = 'Save for next time'
 %br
 =link_to 'About', about_path
-%br
-%br
 %p.small 
-  Switch layout to: 
+  [
   =link_to 'Mobile', :action => "set_layout", :mobile => "1" 
+  |
   =link_to 'Full', :action => "set_layout", :mobile => "0" 
+  |
   =link_to 'Auto', :action => "set_layout", :mobile => 'auto'
+  ]

@@ -15,7 +15,10 @@ a {
   background: transparent;
   color: maroon;
   text-decoration: underline;
-  font-weight: bold;
+}
+label {
+  color: LightGray;
+  font-size: 14pt
 }
 h1 {
   color: maroon;
