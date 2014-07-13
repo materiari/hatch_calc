@@ -1,5 +1,5 @@
 html, body {
-  margin: 0;
+  margin-left: 4px;
   padding: 0;
   background: black;
   color: LightGray;
@@ -12,7 +12,7 @@ div#main {
 }
 a {
   background: transparent;
-  color: maroon;
+  color: red;
   text-decoration: underline;
   font-size: 12pt
 }
@@ -23,8 +23,11 @@ label {
 p.small {
   font-size: 12pt
 }
+p {
+  margin: 4px
+}
 h1 {
-  color: maroon;
+  color: red;
   font-size: 150%;
   font-style: italic;
   display: block;
@@ -42,11 +45,11 @@ h1.title {
 }
 
 h2 {
-  margin: 10px;
+  margin: 5px;
   color: white
 }
 table.workout {
-  margin: 10px;
+  margin: 5px;
   border-collapse: collapse;
   width: auto;
   border-right: 2px solid white;

@@ -1,13 +1,15 @@
 %h1 About
 %p In July of 2014, CrossFit Mission Gorge started programming some workouts based on having athletes follow Gayle Hatch's lifting program.
 %p This little web page is up to make it easier for athletes to figure out their lifts for a given day in any week of the program.
+%p NOTE: if you don't know your one-rep max for front and back squat I'd say that you don't need this calculator, you need a coach.
 =link_to 'About the Hatch Squat Program', 'http://www.mikesgym.org/programs/index.php?show=program&programID=19'
 %br
 =link_to 'About CrossFit Mission Gorge', 'http://www.crossfitmissiongorge.com/'
-="(the best gym in SoCal) "+@smiley
-%br
-%p NOTE: if you don't know your one-rep max for front and back squat I'd say that you don't need this calculator, you need a coach.  Follow the link to our gym and have an expert get you started.
+="(the best gym in SoCal)"
+=image_tag 'http://www.neophi.com/home/aris/smiley_1.png'
+%p Jokes aside, the combination of great coaching, solid well-thought-out programming, and an amazing community have made this place a home-away-from-home for so many of us.  If you're in SD, drop by, say "Hi!" and throw down a WOD with us...
+
 %h3 Some geeky info about this site
-%p This site was written as a Rails app, which some would say is overkill for a page that could essentially be written as a single PHP sheet.  Just wrapping up a Software as a Service class and this seemed like a good little exercise as well as a convenience for our community.  If you give the page nonsense inputs it will just simply default in the current week at CFMG (or 1 once the program is over) and assume your one rep max is 100 pounds.
+%p This site was written as a Rails app, which some would say is overkill for a page that could essentially be written as a single PHP sheet.  It is meant to be transparently mobile-adaptive.  I'm just wrapping up a Software as a Service class and this seemed like a good little exercise as well as a convenience for our community.  If you give the page nonsense inputs it will just simply default in the current week at CFMG (or 1 once the program is over) and assume your one rep max is 100 pounds.
 %br
 =link_to 'Back to the Calculator', hatch_index_path
